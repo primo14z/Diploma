@@ -1,0 +1,589 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cl",
+				"cleaned_data"
+			],
+			[
+				"Ema",
+				"email"
+			],
+			[
+				"Use",
+				"UserForm"
+			],
+			[
+				"U",
+				"UserCreationForm"
+			],
+			[
+				"for",
+				"forms"
+			],
+			[
+				"is",
+				"is_Active"
+			],
+			[
+				"O",
+				"Origin"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"con",
+				"controller"
+			],
+			[
+				"obdelano",
+				"obdelano_N_K"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"backgr",
+				"background-size"
+			],
+			[
+				"C",
+				"CharField"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"pogos",
+				"pogostost_dostave_K"
+			],
+			[
+				"narocilo_O",
+				"narocilo_Obdelano"
+			],
+			[
+				"obd",
+				"obdelano_N_O"
+			],
+			[
+				"prodajalec",
+				"prodajalec_O_id"
+			],
+			[
+				"ko",
+				"kosarica_K_id"
+			],
+			[
+				"stevi",
+				"stevilo_K_N"
+			],
+			[
+				"kosa",
+				"kosarica"
+			],
+			[
+				"pogo",
+				"pogostost_dostave_K"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"datum",
+				"datum_N_O_obdelano"
+			],
+			[
+				"narocila",
+				"narocila_K_N"
+			],
+			[
+				"pro",
+				"prodajalec_K"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"ime",
+				"ime_K"
+			],
+			[
+				"r",
+				"reload"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"og",
+				"oglas_id"
+			],
+			[
+				"n",
+				"narociloID"
+			],
+			[
+				"nar",
+				"narocilo_id"
+			],
+			[
+				"na",
+				"narocilo"
+			],
+			[
+				"ku",
+				"kupec_O_id"
+			],
+			[
+				"proda",
+				"prodajalec_O_id"
+			],
+			[
+				"oglas_O",
+				"oglas_O_id"
+			],
+			[
+				"da",
+				"datum_N_O"
+			],
+			[
+				"u",
+				"user"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"ogla",
+				"oglas"
+			],
+			[
+				"e",
+				"edit_O"
+			],
+			[
+				"k",
+				"kolicina_O"
+			],
+			[
+				"kolici",
+				"kolicina_O"
+			],
+			[
+				"im",
+				"ime_O"
+			],
+			[
+				"o",
+				"oglas_E"
+			],
+			[
+				"ogl",
+				"oglas"
+			],
+			[
+				"kol",
+				"kolicina_O"
+			],
+			[
+				"s",
+				"scope"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"ce",
+				"cena_N_O"
+			],
+			[
+				"cena",
+				"cena_O"
+			],
+			[
+				"bo",
+				"body"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"oglas",
+				"oglas_id"
+			],
+			[
+				"koli",
+				"kolicina_N_O"
+			],
+			[
+				"h",
+				"http"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"cr",
+				"Create"
+			],
+			[
+				"m",
+				"max_length"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
+				"regis",
+				"Registracija"
+			],
+			[
+				"form",
+				"formaction\tAttr"
+			],
+			[
+				"q",
+				"question_text"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 265.0,
+		"last_filter": "Ja",
+		"selected_items":
+		[
+			[
+				"Ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Py",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"pytho",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"pyt",
+				"Build With: Python - Syntax Check"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/PrimoBabi/Desktop/kmet"
+	],
+	"file_history":
+	[
+		"/C/Users/Alisa/Desktop/kmet/KmetApp/urls.py",
+		"/C/Users/Alisa/Desktop/kmet/KmetApp/models.py",
+		"/C/Users/Alisa/Desktop/kmet/manage.py",
+		"/C/Users/Alisa/Desktop/kmet/KmetApp/forms.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/urls.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/models.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/forms.py",
+		"/C/Users/Alisa/Desktop/kmet/KmetApp/apps.py",
+		"/C/Users/Alisa/Desktop/kmet/KmetSite/settings.py",
+		"/C/Users/Alisa/Desktop/kmet/KmetSite/urls.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetSite/settings.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/views.py",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/templates/__base__.html",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/static/js/app.js",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/static/js/controllers/MainController.js",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/templates/oglas/index.html",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/templates/oglas/view_oglas.html",
+		"/C/Users/Alisa/Desktop/is_diploma-master/startbootstrap-shop-item-gh-pages/index.html",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetApp/static/js/ui-bootstrap-tpls-2.1.3.min.js",
+		"/C/Users/Alisa/Desktop/angularjs_popup_with_close_download/index.html",
+		"/C/Users/Alisa/Desktop/is_diploma-master/KmetSite/urls.py",
+		"/C/Users/Primo Babi/Documents/Projekt/Projekt.asm",
+		"/E/Downloads/Movies/Borderlands Pre Sequel repack Mr DJ/Instructions.txt",
+		"/C/Users/Primo Babi/AppData/Local/Temp/7zO8310C33B/build.prop",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/oglas/add.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/oglas/edit.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/oglas/index.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/accounts/login.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo/index_N.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo/index_O.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo_K/index_M.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo_K/index_N.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo_K/index_O.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/narocilo/index_M.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/kosarica/edit_K.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/kosarica/index.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/kosarica/add_K.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/accounts/edit.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/__base__.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/bootstrap.min.css",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/index.html",
+		"/E/Downloads/Movies/Ashampoo Snap 2017 1.0.1 + Serial by MaSTeR/serial.txt",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/main.css",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/clean-blog.min.css",
+		"/C/xampp/htdocs/site/index.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/bootstrap.css",
+		"/C/xampp/htdocs/site/css/bootstrap.css",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/clean-blog.css",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/css/img.css",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/js/controllers/MainController.js",
+		"/C/Users/Primo Babi/AppData/Local/Temp/7zO0BF26DBF/projekt_sis1.asm",
+		"/E/Games/No Man's Sky/Binaries/SETTINGS/TKGRAPHICSSETTINGS.MXML",
+		"/C/Users/Primo Babi/Desktop/PokeAuto/mmlog.txt",
+		"/C/Python35/TITLE PokemonGo-Bot Installer.bat",
+		"/C/Users/Primo Babi/Desktop/VlasckPepper",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/accounts/registration.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/views.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/models.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetSite/settings.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/js/app.js",
+		"/E/Downloads/Movies/MAK.Kljuci.Windows.7.8.8.1.10.Office.2010.2013.2016-ERiKC3000/MAK Kljuci 29.5.2016 - ERiKC3000.txt",
+		"/C/virtualenvs/Diploma/Diplomska/FullText.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/FullText.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/static/js/vendor/angular.min.js",
+		"/C/virtualenvs/Diploma/Diplomska/KmetSite/__init__.py",
+		"/C/virtualenvs/mysite/polls/models.py",
+		"/C/virtualenvs/Neki neki.txt",
+		"/C/virtualenvs/patrik/patrik/KmetApp/models.py",
+		"/C/Users/Primo Babi/Documents/Diplomska/registracija.html",
+		"/C/virtualenvs/Diploma/Diplomska/KmetSite/urls.py",
+		"/C/virtualenvs/Diploma/Diplomska/manage.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetApp/templates/prijava.html",
+		"/C/virtualenvs/patrik/patrik/patrik/settings.py",
+		"/C/virtualenvs/Diploma/Kmet/KmetApp/views.py",
+		"/C/virtualenvs/Diploma/Diplomska/KmetSite/wsgi.py",
+		"/C/virtualenvs/mysite/polls/admin.py",
+		"/C/virtualenvs/mysite/polls/templates/polls/detail.html",
+		"/C/virtualenvs/mysite/polls/templates/polls/results.html",
+		"/C/virtualenvs/mysite/polls/templates/polls/index.html",
+		"/C/virtualenvs/mysite/polls/urls.py",
+		"/C/virtualenvs/mysite/polls/views.py",
+		"/C/Users/Primo Babi/Documents/Diplomska/index.html",
+		"/C/virtualenvs/mysite/polls/tests.py",
+		"/C/virtualenvs/mysite/mysite/settings.py",
+		"/C/virtualenvs/mysite/polls/migrations/0001_initial.py",
+		"/C/Users/Primo Babi/AppData/Local/Temp/7zO806EEFB1/conn.php",
+		"/C/Users/Primo Babi/Documents/Diplomska/conn.php",
+		"/C/virtualenvs/mysite/urls.py",
+		"/C/virtualenvs/djangodev/setup.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"C:\\Users\\Alisa\\Desktop\\kmet",
+			"C:\\virtualenvs\\Diploma\\Diplomska"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"date",
+			"Date",
+			"Fo",
+			"D",
+			"oglas",
+			"]",
+			"EOR",
+			"navbar-colapse",
+			"active",
+			"dropdown-menu",
+			"bs-example-navbar-collapse-1",
+			"margin-top",
+			"site-heading",
+			".intro",
+			"intro-",
+			"narocilo_IO",
+			"narocilo_",
+			"def",
+			"2",
+			"narocila_K_obdelana",
+			"narocila_K_O",
+			"ž",
+			"narocilo_O",
+			"kosarica",
+			"kosarica_M",
+			"kosarica",
+			"contains",
+			"oglas",
+			"narocilo_E",
+			"oglasID",
+			"<p",
+			"p",
+			"split",
+			"css/bg",
+			"css",
+			"bg.jpg",
+			"oddaja_O",
+			"Diplomska",
+			"statoc",
+			"static"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"d",
+			"icontains"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "manage.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 213.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

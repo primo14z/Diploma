@@ -1,0 +1,31 @@
+{% extends '__base__.html' %}
+
+{% block prijava %}
+
+ <ul class = "nav navbar-nav navbar-left">
+ <li>
+<a href = "">Log Out </a>
+
+<li>
+<a href ="{% url 'KmetApp:logIn' %}">Prijava </a>
+
+<li>
+<a href ="{% url 'KmetApp:registration' %}">Registracija</a>
+
+
+
+</ul>
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>To je veseli kmet</h1>
+<p>To je moja vsebina.</p>
+
+{% endblock %}
+
+{% block ftr %}
+
+{% endblock %}
