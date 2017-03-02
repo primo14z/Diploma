@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -78,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kmet',
-        'USER': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'USER': 'kmet',
+        'PASSWORD': 'Kmet_123456',
+        'HOST': 'localhost',
         'OPTIONS': {
             'sql_mode': 'traditional',
         }

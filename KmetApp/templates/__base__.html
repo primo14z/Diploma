@@ -1,8 +1,7 @@
 {% load staticfiles %}
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="slo">
 
 <head>
 
@@ -61,7 +60,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li> <a href="{% url 'KmetApp:home' %}">Domov</a>
          <li>{% if user.is_authenticated %}
-                <a href ="{% url 'KmetApp:Edit' %}">Urejanje Profila</a>
+                <a href ="">Urejanje Profila</a>
                     {% endif %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oglasi <span class="caret"></span></a>
@@ -69,8 +68,8 @@
              <ul style="padding-left: 0">
                     <li> <a  href="">Iskanje oglasov</a> 
                      {% if user.is_authenticated %}
-                    <li><a href="{% url 'KmetApp:oglas_O' %}">Oddaja oglasa</a>
-                    <li><a href ="{% url 'KmetApp:oglas_M' %}">Moji oglasi </a>
+                    <li><a href="">Oddaja oglasa</a>
+                    <li><a href ="">Moji oglasi </a>
                     {% endif %}
              </ul>
           </ul>
@@ -82,9 +81,9 @@
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Naročila za oglase<span class="caret"></span></a>
           <ul class="dropdown-menu">
              <ul>
-             <li><a href="{% url 'KmetApp:narocilo' %}" >Neobdelana Narocila</a>
-              <li><a href ="{% url 'KmetApp:narocilo_E' %}">Moja naročila</a>
-                 <li><a href ="{% url 'KmetApp:narocilo_IO' %}">Obdelana naročila</a>
+             <li><a href="" >Neobdelana Narocila</a>
+              <li><a href ="">Moja naročila</a>
+                 <li><a href ="">Obdelana naročila</a>
              </ul>
       </ul>
       </li>
@@ -108,9 +107,9 @@
 
           <ul class="dropdown-menu">
              <ul>
-                <li><a href="{% url 'KmetApp:narocilo' %}" >Neobdelana Narocila</a>
-                <li><a href ="{% url 'KmetApp:narocilo_E' %}">Moja naročila</a>
-                <li><a href ="{% url 'KmetApp:narocilo_IO' %}">Obdelana naročila</a>
+                <li><a href="" >Neobdelana Narocila</a>
+                <li><a href ="">Moja naročila</a>
+                <li><a href ="">Obdelana naročila</a>
              </ul>
         </ul>
    

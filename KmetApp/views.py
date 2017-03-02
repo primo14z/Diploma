@@ -8,39 +8,45 @@ from django.views.decorators import csrf
 import json
 from django.core import serializers
 from django.db.models import Q
+from django.shortcuts import redirect
 from KmetApp.forms import *
 
 # Create your views here.
 def home(request):
-	return render(request, 'index.html')
+    """Return Index HTML"""
+    return render(request, 'index.html')
 
-def logIn(request):
-	return render(request, 'User/LogIn.html')
-
-def registration(request):
-	return render(request , 'User/Registration.html')
-
-def testView(request):
-	return render(request, 'test.html')
+def loginview(request):
+    """Return LogIn HTML"""
+    return render(request, 'User/LogIn.html')
 
 def register_user(request):
-	if request.method == 'POST':
-		form = UserForm(request.POST)
-		#print(form)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('index.html')
-	args={}
-	args['form'] = UserForm()
-	return render (request , 'User/Registration.html' , args)
+    """Registration User Handler"""
+    form = UserForm()
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('KmetApp: home')
+        else:
+            return render(request, 'User/Registration.html', {'form' : form})
+    else:
+        return render(request, 'User/Registration.html')
 
-def test(request):
-	
-	form = TestForm(request.POST)
+def logon(request):
+    """Log In User Handler"""
+    if request.method == 'POST':
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('KmetApp:home')
+        else:
+            return render(request, 'User/LogIn.html', {'user': username})
+    return render(request, 'User/LogIn.html')
 
-	if form.is_valid():
-		form.save
-		return HttpResponseRedirect('index.html')
-	args={}
-	args['form'] = TestForm()	
-	return render (request , 'User/Registration.html')
+def logoff(request):
+    """Log out user"""
+    logout(request)
+    return redirect('KmetApp:home')
