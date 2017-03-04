@@ -1,0 +1,105 @@
+{% extends '__base__.html' %}
+{% load staticfiles %}
+
+{% csrf_token %}
+
+
+{% block prijava %}
+
+ <ul class = "nav navbar-nav navbar-left">
+    
+{% if user.is_authenticated %}
+    <li>
+    <a href = "{% url 'KmetApp:logoff' %}">Log Out </a>       
+{% else %}
+    <li>
+    <a href ="{% url 'KmetApp:logon' %}">Prijava </a>
+
+<li>
+<a href ="{% url 'KmetApp:register_user' %}">Registracija</a>
+
+
+{% endif %}
+</ul>
+{% endblock %}
+
+{% block hdr %}
+
+ <header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <div class="page-heading">
+                        <h1>Iskanje Oglasov</h1>
+                        <hr class="small">
+                        <span class="subheading">Tukaj lahko vsak poišče registriran oglas.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+	<form class="form-wrapper" name="IskanjeOglasa">
+	    <input type="text" id="search" placeholder="Iskanje oglasov">
+	    <input type="submit" id="submit">
+	</form>
+
+ 	<div class="oglasi">
+  		{% verbatim %}
+ 		<div class="container" ng-repeat="oglas in oglasi" >
+          	
+              <img src="{{oglas.slika}}" width="250" height="250"></img>
+              <h3 class="name"><a ng-href="#" ng-click="oglas_view( oglas.pk)" >{{ oglas.ime_O }} </a>
+            <div class="item col-md-12 col-md-offset-3" >
+              </h3>
+	            <ul>
+	            	<li class="price" name="cena_O">  Cena izdelka: {{ oglas.cena_O }} €/kg</li>
+	           		<li class = "quantity" name="kolicina_O"> Kolicina: {{ oglas.kolicina_O }} kg </li>
+                <li class = "prodajalec"> Ime prodajalca: {{oglas.prodajalec}}</li>
+                <li class ="mesto_pridelave"> Mesto pridelave: {{oglas.mesto_pridelave}}</li>
+	           		<li class = "description"> Opis: {{ oglas.opis_O }}	</li>
+                
+	            </ul>	                       	
+            	<button  class ="btn btn-lg btn-info" style ="
+                font-size: 12px;
+                padding: 5px 2px;"
+    type="submit" ng-click="oglas_gumb($event)" data-oglas="{{ oglas.pk }}" data-toggle="modal" data-target="#myModal" >Oddaja naročila </button>
+      <br></br>
+          	</div>
+        </div>
+        {% endverbatim %}
+    </div>
+		
+  
+
+<form method="POST" >
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Oddaja naročila</h4>
+      </div>
+      <div class="modal-body">
+			Količina izdelka: <input type="integer" name="kolicina" id="kolicina">
+      </div>
+
+      <div class="oglas_id" display:none id="oglas_id"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input  type="submit" class="btn btn-primary" data-dismiss="modal" ng-click= "narocilo_I()">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>
+{% endblock %}
+
+
+ 
+
+

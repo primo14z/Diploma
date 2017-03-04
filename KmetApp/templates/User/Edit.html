@@ -1,0 +1,92 @@
+{% extends '__base__.html' %}
+{% load staticfiles %}
+
+{% block prijava %}
+
+ <ul class = "nav navbar-nav navbar-left">
+    
+{% if user.is_authenticated %}
+    <li>
+    <a href = "{% url 'KmetApp:logoff' %}">Log Out </a>       
+{% else %}
+    <li>
+    <a href ="{% url 'KmetApp:logon' %}">Prijava </a>
+
+<li>
+<a href ="{% url 'KmetApp:register_user' %}">Registracija</a>
+
+
+{% endif %}
+</ul>
+{% endblock %}
+
+
+
+
+{% block hdr %}
+    <header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Urejanje profila</h1>
+                        <hr class="small">
+                        <span class="subheading">Tukaj se lahko vsak uporabnik popravi svoje podatke.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock %}
+{% block content %}
+ <!-- Main Content -->
+    <div class="container">
+    <div class="col-lg-12 well">
+	<div class= "row"> 
+		    	
+		<form action="{% url 'KmetApp:edit_user' %}" method = "POST" >
+		{% csrf_token %}
+			<div class="col-sm-12">
+				<div class="row">
+				<div class="col-sm-4 form-group">
+
+					<label>Ime</label>
+					<input type="text" name="name" placeholder="Ime" class="form-control">
+				</div>
+				<div class="col-sm-4 form-group">
+					<label>Priimek</label>
+						<input type="text" name="last_Name" placeholder="Priimek" class="form-control">
+				</div>
+				</div>
+
+				<div class="row">
+                    <div class="col-sm-4 form-group">
+						<label>Telefonska številka</label>
+							<input type="text" name="phone_Number" value="{{form.phone_Number.value}}" placeholder="Telefonska številka " class="form-control">
+						</div>
+					<div class="col-sm-4 form-group">
+						<label>Naslov</label>
+							<input type="text" name="adress" placeholder="Naslov " class="form-control">
+						</div>				
+							
+						<div class="col-sm-4 form-group">
+							<label>Poštna št.</label>
+							<input type = "text" name= "zip_Code" placeholder= "Poštna Številka" class="form-control">
+						</div>
+						<div class="col-sm-4 form-group">
+							<label>Kraj</label>
+							<input type="text" name="city" placeholder="Kraj" class="form-control">
+						</div>
+				</div>
+			<br>
+			<button type="submit" class ="btn btn-lg btn-info" >Popravi podatke</button>
+			<br>
+
+		</form>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

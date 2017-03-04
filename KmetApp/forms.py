@@ -22,3 +22,31 @@ class UserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class SellingForm(forms.ModelForm):
+    """Add Selling Form"""
+    class Meta:
+        model = Selling
+        exclude = ['is_Active', 'seller']
+
+    def save(self, commit=True):
+        """Save Method"""
+        order = super(SellingForm, self).save(commit=False)
+
+        if commit:
+            order.save()
+        return order
+
+class UserEditForm(forms.ModelForm):
+    """User Edit Form"""
+    class Meta:
+        model = User
+        exclude = ['password', 'is_active', 'email', 'password1', 'password2']
+
+    def save(self, commit=True):
+        """Save Method"""
+        user = super(UserEditForm, self).save(commit=False)
+
+        if commit:
+            user.save()
+        return user

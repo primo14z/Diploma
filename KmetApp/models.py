@@ -57,46 +57,48 @@ class User(AbstractBaseUser, PermissionsMixin):
         super(User, self).save(*args, **kwargs)
 
 class Selling(models.Model):
+    """Model For Sellings"""
     name = models.CharField(max_length=50)
-    price =	models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
+    price =	models.DecimalField(max_digits=5, decimal_places=2)
     quantity = models.IntegerField()
     description = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True, blank=True)
     seller = models.ForeignKey(User)
     is_Active = models.BooleanField(default=True)
     picture = models.ImageField(upload_to='img/Selling/', default='img/Selling/default.jpg')
-    origin = models.CharField(max_length=50, default='')
+    origin = models.CharField(max_length=50)
 
 
 class Order_Selling(models.Model):
-    price_Order = models.DecimalField(max_length = 10, max_digits = 5, decimal_places=2, default=Decimal('0.00'))
+    """Orders for Sellings"""
+    price_Order = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
     quantity_Order = models.IntegerField()
     is_Completed = models.BooleanField(default=False)
-    date_Submission = models.DateTimeField(auto_now_add=True , blank=True)
-    date_Completed = models.DateTimeField(default = None , blank=True)
-    selling =models.ForeignKey(Selling)
+    date_Submission = models.DateTimeField(auto_now_add=True, blank=True)
+    date_Completed = models.DateTimeField(default=None, blank=True)
+    selling = models.ForeignKey(Selling)
     buyer = models.ForeignKey(User)
 
 class Basket(models.Model):
-    name = models.CharField(max_length = 50)
-    price = models.DecimalField(max_length = 10, max_digits = 5, decimal_places=2, default=Decimal('0.00'))
+    name = models.CharField(max_length=50)
+    price = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
     quantity = models.IntegerField()
     total_Amount = models.IntegerField()
-    description = models.CharField(max_length = 200)
-    seller = models.ForeignKey(User)    
-    date = models.DateTimeField(auto_now_add=True , blank=True)
-    is_Active = models.BooleanField(default = True)
-    picture = models.ImageField(upload_to ='img/Basket/', default='img/Basket/default.jpg')
-    origin = models.CharField(max_length= 50, default='')
+    description = models.CharField(max_length=200)
+    seller = models.ForeignKey(User)
+    date = models.DateTimeField(auto_now_add=True, blank=True)
+    is_Active = models.BooleanField(default=True)
+    picture = models.ImageField(upload_to='img/Basket/', default='img/Basket/default.jpg')
+    origin = models.CharField(max_length=50)
 
 class Order_Basket(models.Model):
-    price_Order = models.DecimalField(max_length = 10, max_digits = 5, decimal_places=2, default=Decimal('0.00'))
+    price_Order = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
     amount = models.IntegerField()
     date_Submission = models.DateTimeField(auto_now_add=True, blank=True)
-    date_Completed = models.DateTimeField(default = None , blank=True)
-    delivery_Amount = models.CharField(max_length = 40)
-    is_Completed = models.BooleanField(default = False)
-    basket =models.ForeignKey(Basket)
+    date_Completed = models.DateTimeField(default=None, blank=True)
+    delivery_Amount = models.CharField(max_length=40)
+    is_Completed = models.BooleanField(default=False)
+    basket = models.ForeignKey(Basket)
     buyer = models.ForeignKey(User)
 
 """
