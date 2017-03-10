@@ -1,9 +1,6 @@
-from datetime import datetime
-from decimal import Decimal
 from django.db import models
-from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser, PermissionsMixin, User)
-from django.utils import timezone
-
+from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser,
+                                        PermissionsMixin)
 
 
 class CustomUserManager(BaseUserManager):
@@ -21,7 +18,7 @@ class CustomUserManager(BaseUserManager):
         user.is_admin = False
         user.is_active = True
         return user
- 
+
     def create_superuser(self, email, password):
         """Create Super User"""
         user = self.create_user(
@@ -33,6 +30,7 @@ class CustomUserManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
         return user
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     """User Model"""
@@ -56,28 +54,32 @@ class User(AbstractBaseUser, PermissionsMixin):
         self.email = self.email.lower()
         super(User, self).save(*args, **kwargs)
 
+
 class Selling(models.Model):
     """Model For Sellings"""
     name = models.CharField(max_length=50)
-    price =	models.DecimalField(max_digits=5, decimal_places=2)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     quantity = models.IntegerField()
     description = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True, blank=True)
     seller = models.ForeignKey(User)
     is_Active = models.BooleanField(default=True)
-    picture = models.ImageField(upload_to='img/Selling/', default='img/Selling/default.jpg')
+    picture = models.ImageField(upload_to='KmetApp/static/img/Selling/',
+                                default='KmetApp/static/img/Selling/')
     origin = models.CharField(max_length=50)
 
 
 class Order_Selling(models.Model):
     """Orders for Sellings"""
-    price_Order = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
+    price_Order = models.DecimalField(max_length=10, max_digits=5,
+                                      decimal_places=2)
     quantity_Order = models.IntegerField()
     is_Completed = models.BooleanField(default=False)
     date_Submission = models.DateTimeField(auto_now_add=True, blank=True)
     date_Completed = models.DateTimeField(default=None, blank=True)
     selling = models.ForeignKey(Selling)
     buyer = models.ForeignKey(User)
+
 
 class Basket(models.Model):
     name = models.CharField(max_length=50)
@@ -88,8 +90,9 @@ class Basket(models.Model):
     seller = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True, blank=True)
     is_Active = models.BooleanField(default=True)
-    picture = models.ImageField(upload_to='img/Basket/', default='img/Basket/default.jpg')
+    picture = models.ImageField(upload_to='KmetApp/static/img/Basket/', default='KmetApp/static/img/Basket/')
     origin = models.CharField(max_length=50)
+
 
 class Order_Basket(models.Model):
     price_Order = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)

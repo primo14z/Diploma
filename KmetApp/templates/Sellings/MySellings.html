@@ -1,0 +1,87 @@
+{% extends '__base__.html' %}
+{% load staticfiles %}
+
+{% csrf_token %}
+
+{% block hdr %}
+
+ <header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <div class="page-heading">
+                        <h1>Moji oglasi</h1>
+                        <hr class="small">
+                        <span class="subheading">Spisek vaših oglasov</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+    {% for selling in sellings %}
+ 		<div class="container">
+          	
+          	<div class="item col-md-12 col-md-offset-3"  >
+              <img src="{{selling.picture}}" width="250" height="250"></img>
+              <h3 class="name"><a ng-href="#" ng-click="oglas_view( oglas.pk)" >{{ selling.name }} </a>
+            <div class="item col-md-12 col-md-offset-3" >
+              </h3>
+              <ul>
+                <li class="price" name="cena_O">  Cena izdelka: {{ selling.price }} €/kg</li>
+                <li class = "quantity" name="kolicina_O"> Kolicina: {{ selling.quantity }} kg </li>
+                <li class ="mesto_pridelave"> Mesto pridelave: {{selling.origin}}</li>
+                <li class = "description"> Opis: {{ selling.description }} </li>
+                
+              </ul>                      	
+            	<button id ="submit1" type="submit"  class ="btn btn-lg btn-info" 
+              style ="
+                font-size: 12px;
+                padding: 5px 2px;" 
+                ng-click="narocilo($event)" data-oglas="{{ oglas.oglas_id }}" data-toggle="modal" data-target="#myModal" >Popravek oglasa</button>
+              <a id = "submit1"   class ="btn btn-lg btn-info" style ="
+                font-size: 12px;
+                padding: 5px 2px;"
+              data-oglas="{{ selling.id }}" href="{% url 'KmetApp:disable_selling' %}?id={{selling.id}} ">Zaključek oglasa</button> <br /><br /><br /><br />
+          	</div>
+        </div>
+{% endfor %}
+
+<form method="POST" >
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Popravek oglasa</h4>
+      </div>
+      <div class="modal-body">
+      			<ul>
+      				<li>Ime oglasa: <input type="text" name="ime_O" id="ime_O"></li>           
+	            	<li>Cena izdelka: <input type="integer" id ="cena_O">€/kg</li>
+	            	<li>Količina izdelka: <input type="integer" name="kolicina" id="kolicina_O"></li>
+	           		<li>Opis: <input type="text" id="opis_O"></li>
+                <div class="form-group">
+                <li><input id="slika" type="file" name="slika"></li>
+                </div>
+	           	</ul>
+	         
+      </div>
+
+      <div class="oglas_id" display:none id="oglas_id"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input  type="submit" class="btn btn-primary" data-dismiss="modal" ng-click= "oglas_E()">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>
+
+  </div>
+{% endblock %}
