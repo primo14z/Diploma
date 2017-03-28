@@ -121,11 +121,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+TIME_INPUT_FORMATS = ('%H:%M:%S')
+
+DATETIME_INPUT_FORMATS = ('%d %b %Y')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/KmetApp/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'KmetApp/Media')
+
+MEDIA_URL = 'KmetApp/Media/'
 
 LOGIN_URL = 'KmetApp:prijava'
 

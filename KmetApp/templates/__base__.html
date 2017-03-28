@@ -4,7 +4,6 @@
 <html lang="slo">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +24,9 @@
     <!-- Custom Fonts -->
      <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic|Oswald' rel='stylesheet' type='text/css'>
     <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+<style>
 
+</style>
 </head>
 
 <body>
@@ -51,18 +52,17 @@
          <li>{% if user.is_authenticated %}
                 <a href ="{% url 'KmetApp:edit_user' %}">Urejanje Profila</a>
                     {% endif %}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oglasi <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-             <ul style="padding-left: 0">
-                    <li> <a  href="{% url 'KmetApp:search_selling' %}">Iskanje oglasov</a> 
-                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'KmetApp:add_selling' %}">Oddaja oglasa</a>
-                    <li><a href ="{% url 'KmetApp:my_sellings' %}">Moji oglasi </a>
-                    {% endif %}
-             </ul>
-          </ul>
-        </li>
+        
+        <div class="dropdown">
+          <button class="dropbtn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oglasi</button>
+          <div class="dropdown-content">
+                <a href="{% url 'KmetApp:search_selling' %}">Iskanje oglasov</a> 
+                    {% if user.is_authenticated %}
+                <a href="{% url 'KmetApp:add_selling' %}">Oddaja oglasa</a>
+                <a href ="{% url 'KmetApp:my_sellings' %}">Moji oglasi </a>
+                {% endif %}
+          </div>
+        </div>
          
           </li>
            {% if user.is_authenticated %}
@@ -70,9 +70,9 @@
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Naročila za oglase<span class="caret"></span></a>
           <ul class="dropdown-menu">
              <ul>
-             <li><a href="" >Neobdelana Narocila</a>
-              <li><a href ="">Moja naročila</a>
-                 <li><a href ="">Obdelana naročila</a>
+             <li><a href="{% url 'KmetApp:undoneOrder' %}" >Neobdelana Narocila</a>
+              <li><a href ="{% url 'KmetApp:my_OrderSellings' %}">Moja naročila</a>
+                 <li><a href ="{% url 'KmetApp:doneOrder' %}">Obdelana naročila</a>
              </ul>
       </ul>
       </li>
@@ -85,7 +85,7 @@
                 <li>  <a href="{% url 'KmetApp:search_basket' %}">Iskanje Košaric</a>
                 {% if user.is_authenticated %}
                  <li><a href="{% url 'KmetApp:add_basket' %}">Oddaja oglasa</a>
-                 <li><a href =""> Moji oglasi </a>
+                 <li><a href ="{% url 'KmetApp:my_baskets' %}"> Moji Košarice </a>
                   {% endif %}
              </ul>
       </ul>
@@ -153,7 +153,9 @@
     <!-- Footer -->
    
     <!-- jQuery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery2.2.4.js' %}"></script>
+ 
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

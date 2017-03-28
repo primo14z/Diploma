@@ -18,5 +18,16 @@ urlpatterns = [
     url(r'^disable_selling/', views.disable_selling, name='disable_selling'),
     url(r'^add_basket/', views.add_basket, name='add_basket'),
     url(r'^search_basket/', views.search_basket, name='search_basket'),
+    url(r'^my_OrderSellings/', views.my_OrderSellings, name='my_OrderSellings'),
+    url(r'^undoneOrder/', views.undoneOrder, name='undoneOrder'),
+    url(r'^doneOrder/', views.doneOrder, name='doneOrder'),
+    url(r'^editSelling/', views.editSelling, name='editSelling'),
+    url(r'^complete_orderSelling/', views.complete_orderSelling, name='complete_orderSelling'),
+    url(r'^add_orderB/', views.add_orderB, name='add_orderB'),
+    url(r'^disable_basket/', views.disable_basket, name='disable_basket'),
+    url(r'^my_baskets/', views.my_baskets, name='my_baskets'),
+    url(r'^editBasket/', views.editBasket, name='editBasket'),
+    
+
 
 ]

@@ -1,0 +1,49 @@
+{% extends '__base__.html' %}
+{% load staticfiles %}
+
+{% csrf_token %}
+
+{% block hdr %}
+
+ <header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <div class="page-heading">
+                        <h1>Moja Naročila</h1>
+                        <hr class="small">
+                        <span class="subheading">Spisek vaših naročil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+  
+    <div class="container" >
+            
+            <div class="item col-md-12 col-md-offset-3">
+                {% for order in orders %}
+              <h3 class="name"> {{ order.selling.name }} </h3>
+              <ul>
+                <li class="price" name="cena_O">  Cena izdelka: {{ order.price_Order }} €/kg</li>
+                <li class = "quantity" name="kolicina_O"> Kolicina: {{ order.quantity_Order }} kg </li>
+                <li class = "prodajalec" name="prodajalec_O"> Prodajalec: {{ order.selling.seller.name}}
+                <li class = "datum" name= "datum">Datum oddaje: {{order.date_Submission| date:"H:m:s , d b Y" }}
+                <li class = "obdelano" name="obdelano">
+                {% if order.date_Completed == null %}
+                    Status naročila: Neobdelano
+                {% else %}
+                    Status naročila: Obdelano
+                {%endif%}
+                
+              </ul>                         
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+{% endblock %}

@@ -64,8 +64,7 @@ class Selling(models.Model):
     date = models.DateTimeField(auto_now_add=True, blank=True)
     seller = models.ForeignKey(User)
     is_Active = models.BooleanField(default=True)
-    picture = models.ImageField(upload_to='KmetApp/static/img/Selling/',
-                                default='KmetApp/static/img/Selling/')
+    picture = models.ImageField(upload_to='KmetApp/Media/', null=True, blank=True)
     origin = models.CharField(max_length=50)
 
 
@@ -76,7 +75,7 @@ class Order_Selling(models.Model):
     quantity_Order = models.IntegerField()
     is_Completed = models.BooleanField(default=False)
     date_Submission = models.DateTimeField(auto_now_add=True, blank=True)
-    date_Completed = models.DateTimeField(default=None, blank=True)
+    date_Completed = models.DateTimeField(null=True, blank=True)
     selling = models.ForeignKey(Selling)
     buyer = models.ForeignKey(User)
 
@@ -90,16 +89,16 @@ class Basket(models.Model):
     seller = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True, blank=True)
     is_Active = models.BooleanField(default=True)
-    picture = models.ImageField(upload_to='KmetApp/static/img/Basket/', default='KmetApp/static/img/Basket/')
+    picture = models.ImageField(upload_to='KmetApp/Media/', null=True, blank=True)
     origin = models.CharField(max_length=50)
 
 
 class Order_Basket(models.Model):
     price_Order = models.DecimalField(max_length=10, max_digits=5, decimal_places=2)
-    amount = models.IntegerField()
+    quantity_Order = models.IntegerField()
     date_Submission = models.DateTimeField(auto_now_add=True, blank=True)
     date_Completed = models.DateTimeField(default=None, blank=True)
-    delivery_Amount = models.CharField(max_length=40)
+    frequency = models.CharField(max_length=40)
     is_Completed = models.BooleanField(default=False)
     basket = models.ForeignKey(Basket)
     buyer = models.ForeignKey(User)
