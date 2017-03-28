@@ -266,3 +266,36 @@ def editBasket(request):
                 basket.picture = request.POST['picture']
             basket.save()
     return redirect('KmetApp:my_baskets')
+
+
+def my_OrderBasket(request):
+    """Returns the view with all submited Orders"""
+    user = User.objects.get(id=request.user.id)
+    orders = Order_Basket.objects.filter(buyer=user)
+    return render(request, 'OrderBaskets/MyOrders.html', {'orders': orders})
+
+
+def undoneOrderB(request):
+    """"Display All undone Orders for a Basket"""
+    user = User.objects.get(id=request.user.id)
+    orders = Order_Basket.objects.filter(basket__seller=user, is_Completed=False)
+    return render(request, 'OrderBaskets/UnCompletedOrders.html', {'orders': orders})
+
+
+def doneOrderB(request):
+    """"Display All done Orders for a Basket"""
+    user = User.objects.get(id=request.user.id)
+    orders = Order_Basket.objects.filter(basket__seller=user, is_Completed=True)
+    return render(request, 'OrderBaskets/CompletedOrders.html', {'orders': orders})
+
+
+def complete_orderBasket(request):
+    """Function to complete an active order"""
+    id = request.GET.get('id')
+    user = User.objects.get(id=request.user.id)
+    order = Order_Basket.objects.get(id=id, basket__seller=user)
+    if(order):
+        order.is_Completed = True
+        order.date_Completed = datetime.now()
+        order.save()
+    return redirect('KmetApp:undoneOrderB')

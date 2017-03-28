@@ -27,6 +27,10 @@ urlpatterns = [
     url(r'^disable_basket/', views.disable_basket, name='disable_basket'),
     url(r'^my_baskets/', views.my_baskets, name='my_baskets'),
     url(r'^editBasket/', views.editBasket, name='editBasket'),
+    url(r'^my_OrderBasket/', views.my_OrderBasket, name='my_OrderBasket'),
+    url(r'^undoneOrderB/', views.undoneOrderB, name='undoneOrderB'),
+    url(r'^doneOrderB/', views.doneOrderB, name='doneOrderB'),
+    url(r'^complete_orderBasket/', views.complete_orderBasket, name='complete_orderBasket'),
     
 
 
