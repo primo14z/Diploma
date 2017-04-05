@@ -2,92 +2,71 @@
 {% load staticfiles %}
 
 {% block hdr %}
- <header class="intro-header" style="background-image: url({% static 'img/Registracija-bg.jpg' %})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Registracija Uporabnika</h1>
-                        <hr class="small">
-                        <span class="subheading">Tukaj se lahko vsak uporabnik registrira.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="page-heading">
+				<h1>Registracija</h1>
+				<hr class="small">
+				<span class="subheading">Tukaj se lahko vsak uporabnik registrira.</span>
+			</div>
+		</div>
+	</div>
+</header>
 {% endblock %}
 
 
 {% block content %}
  <!-- Main Content -->
-    <div class="container">
-	 <div class="col-lg-12 well">
-	<div class= "row"> 
-
-		<form action="{% url 'KmetApp:register_user' %}" method = "POST" >
+ <div class="col-md-12">
+	<form action="{% url 'KmetApp:register_user' %}" method="POST">
 		{% csrf_token %}
-		<div class = "col-sm-12">
-			<div class ="row">
-			 <div class="form-group {%if form.errors.email %}has-error{%endif%}">
-				<label>Email</label>
-				<input type="text" name="email" id="inputError" value="{{form.email.value}}" placeholder="Email" rows="3" class="form-control">
-				{%if form.errors.email %}
-       				<div class="controls">
-						<span class="error-inline">Vnesite email naslov</span>
-					</div>
-				{%endif%}
-     		 </div>
-			
-			<div class="row">
-					<div class="col-sm-6 form-group {%if form.errors.email %}has-error{%endif%}">
-						<label>Geslo</label>	
-						<input type="password" name="password1" placeholder="Password" class="form-control">
-					</div>
-					<div class="col-sm-6 form-group">
-						<label>Ponovno vnesite geslo</label>
-						<input type="password" name="password2" placeholder="Re-enter password" class="form-control">
-					</div>
-				</div>
-			<div class="row">
-				<div class="col-sm-4 form-group">
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Ime</label>
+			<div class="col-md-6">
+				<input type="text" name="name" value="{{form.name.value}}" placeholder="Ime" class="form-control ">
+			</div>
+		</div>
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Priimek</label>
+			<div class="col-md-6">
+				<input type="text" name="last_Name" value="{{form.last_Name.value}}" placeholder="Priimek" class="form-control">
+			</div>
+		</div>
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Telefonska številka</label>
+			<div class="col-md-6">
+				<input type="text" name="phone_Number" value="{{form.phone_Number.value}}" placeholder="Telefonska številka " class="form-control">
+			</div>
+		</div>
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Naslov</label>
+			<div class="col-md-6">
+				<input type="text" name="adress" value="{{form.adress.value}}" placeholder="Naslov " class="form-control">
+			</div>
+		</div>
 
-					<label>Ime</label>
-					<input type="text" name="name" value="{{form.name.value}}" placeholder="Ime" class="form-control">
-				</div>
-				<div class="col-sm-4 form-group">
-					<label>Priimek</label>
-						<input type="text" name="last_Name" value="{{form.last_Name.value}}"placeholder="Priimek" class="form-control">
-				</div>
-				</div>
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Poštna št.</label>
+			<div class="col-md-6">
+				<input type="text" name="zip_Code" value="{{form.zip_Code.value}}" placeholder="Poštna Številka" class="form-control">
+			</div>
+		</div>
+		<div class="col-md-12 form-group">
+			<label class="control-label col-md-3">Kraj</label>
+			<div class="col-md-6">
+				<input type="text" name="city" value="{{form.city.value}}" placeholder="Kraj" class="form-control">
+			</div>
+		</div>
+</div>
+<br>
+<div class="col-md-12">
+<button type="submit" class="btn btn btn-info col-md-offset-1">Opravi registracijo</button></div>
+<br>
 
-				<div class="row">
-				<div class="col-sm-4 form-group">
-						<label>Telefonska številka</label>
-							<input type="text" name="phone_Number" value="{{form.phone_Number.value}}" placeholder="Telefonska številka " class="form-control">
-						</div>
-					<div class="col-sm-4 form-group">
-						<label>Naslov</label>
-							<input type="text" name="adress" value="{{form.adress.value}}" placeholder="Naslov " class="form-control">
-						</div>				
-							
-						<div class="col-sm-4 form-group">
-							<label>Poštna št.</label>
-							<input type = "text" name= "zip_Code" value="{{form.zip_Code.value}}" placeholder= "Poštna Številka" class="form-control">
-						</div>
-						<div class="col-sm-4 form-group">
-							<label>Kraj</label>
-							<input type="text" name="city" value="{{form.city.value}}" placeholder="Kraj" class="form-control">
-						</div>
-				</div>
-			<br>
-			<button type="submit" class ="btn btn-lg btn-info" >Opravi registracijo</button>
-			<br>
-
-		</form>
+</form>
 </div>
 </div>
 </div>
-
-
 
 {% endblock %}

@@ -1,51 +1,51 @@
-{% extends '__base__.html' %}
-{% block content %}
-			<form method="POST" class="form-horizontal" action="{% url 'KmetApp:add_basket' %}" enctype="multipart/form-data">			
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Ime Košarice</label>
-				<div class="col-md-3">
-					<input type="text" name="name" value="{{form.name.value}}" placeholder="Ime izdelka" class="form-control">
-				</div>
+{% extends '__base__.html' %} {% block content %}
+<div class="col-md-offset-3">
+	<form method="POST" class="form-horizontal" action="{% url 'KmetApp:add_basket' %}" enctype="multipart/form-data">
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Ime Košarice</label>
+			<div class="col-md-3">
+				<input type="text" name="name" value="{{form.name.value}}" placeholder="Ime izdelka" class="form-control">
 			</div>
+		</div>
 
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Cena košarice</label>
-				<div class="control-label col-md-3">
-					<input type="text" name="price" value="{{form.price.value}}" placeholder="Cena izdelka" class="form-control">
-				</div>
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Cena košarice</label>
+			<div class="col-md-3">
+				<input type="text" name="price" value="{{form.price.value}}" placeholder="Cena izdelka" class="form-control">
 			</div>
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Količina pridelka na košarico</label>
-				<div class="control-label col-md-3">
-					<input type="number" name="quantity" value="{{form.quantity.value}}" placeholder="Količina Izdelka" class="form-control">
-				</div>
+		</div>
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Količina pridelka na košarico</label>
+			<div class="col-md-3">
+				<input type="number" name="quantity" value="{{form.quantity.value}}" placeholder="Količina Izdelka" class="form-control">
 			</div>
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Število košaric na razpolago</label>
-				<div class="control-label col-md-3">
-					<input type="text" name="total_Amount" value="{{form.total_Amount.value}}" placeholder="Število košaric" class="form-control">
-				</div>
+		</div>
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Število košaric na razpolago</label>
+			<div class="col-md-3">
+				<input type="text" name="total_Amount" value="{{form.total_Amount.value}}" placeholder="Število košaric" class="form-control">
 			</div>
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Mesto pridelave</label>
-				<div class="control-label col-md-3">
-					<input type="text" name="origin" value="{{form.origin.value}}" placeholder="Mesto Pridelave" class="form-control">
-				</div>
+		</div>
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Mesto pridelave</label>
+			<div class="col-md-3">
+				<input type="text" name="origin" value="{{form.origin.value}}" placeholder="Mesto Pridelave" class="form-control">
 			</div>
-			<div class="form-group col-md-12">
-				<label class="control-label col-md-3">Opis košarice</label>
-				<div class="control-label col-md-3">
-					<input type="text" name="description" value="{{form.description.value}}" rows="3" placeholder="Opis Izdelka" class="form-control">
-				</div>
+		</div>
+		<div class="form-group col-md-12">
+			<label class="control-label col-md-3">Opis košarice</label>
+			<div class="col-md-3">
+				<input type="text" name="description" value="{{form.description.value}}" rows="3" placeholder="Opis Izdelka" class="form-control">
 			</div>
-			<div class="form-group col-md-12">
-				<div class="control-label col-md-offset-3">
-					<input id="slika" type="file" name="picture" value="{{form.picture.value}}">
-				</div>
+		</div>
+		<div class="form-group col-md-12">
+			<div class="col-md-offset-3">
+				<input id="slika" type="file" name="picture" value="{{form.picture.value}}">
 			</div>
-			<br>
-			<button type="submit" class = "btn btn-lg btn-info col-md-offset-3">Oddaj Oglas</button>
-			<br>
-            {% csrf_token %}
-		</form>
+		</div>
+		<br>
+		<button type="submit" class="btn btn-lg btn-info col-md-offset-3">Oddaj Oglas</button>
+		<br> {% csrf_token %}
+	</form>
+</div>
 {% endblock %}

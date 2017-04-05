@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from django.contrib.messages import constants as message_constants
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -121,9 +122,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-TIME_INPUT_FORMATS = ('%H:%M:%S')
-
-DATETIME_INPUT_FORMATS = ('%d %b %Y')
+MESSAGE_LEVEL = message_constants.SUCCESS
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

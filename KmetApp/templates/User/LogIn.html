@@ -1,49 +1,41 @@
-{% extends '__base__.html' %}
-{% load staticfiles %}
-
-
-{% block hdr %}
-    <header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Prijava Uporabnika</h1>
-                        <hr class="small">
-                        <span class="subheading">Tukaj se lahko vsak uporabnik prijavi.</span>
-                    </div>
+{% extends '__base__.html' %} {% load staticfiles %} {% block hdr %}
+<header class="intro-header" style="background-image: url({% static 'img/prijava-bg.jpg' %})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Prijava Uporabnika</h1>
+                    <hr class="small">
+                    <span class="subheading">Tukaj se lahko vsak uporabnik prijavi.</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-{% endblock %}
-{% block content %}
- <!-- Main Content -->
-        <div class="col-lg-8 col-lg-offset-2 well">
-            <div class="row">
-		   
-		<form method="POST" action="{% url 'KmetApp:logon' %}">
-		  <div class = "col-sm-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1">
-          <div class = "row">
-			<div class="form-group">
-            <label>Email</label>
-				<input type="text" name="email" value="{{user}}" placeholder="Email" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="password" name="password" placeholder="Password" class="form-control">
-			</div>
-			<div class="form-group">
-			
-			<br>
-			<button type="submit" class="btn btn-lg btn-info">Prijavi</button>
-			<br>
-            </div>
-            </div>
-            {% csrf_token %}
-		</form>
-</div>
-</div>
-</div>
+{% endblock %} {% block content %}
+<!-- Main Content -->
+        <form method="POST" action="{% url 'KmetApp:logon' %}" class="form-horizontal">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-4">Email</label>
+                        <div class="col-md-8">
+                        <input type="text" name="email" value="{{user.email}}" placeholder="Email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12" >
+                        <label class="control-label col-md-4">Geslo</label>
+                        <div class="col-md-8">
+                            <input type="password" name="password" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <br>
+                        <div class="col-md-offset-4">
+                        <button type="submit" class="btn btn-lg btn-info" >Prijavi</button>
+                        <br>
+                        </div>
+                    </div>
+                {% csrf_token %}
+        </form>
 
 {% endblock %}

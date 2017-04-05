@@ -1,74 +1,73 @@
-{% extends '__base__.html' %}
-{% load staticfiles %}
-{% csrf_token %}
+{% extends '__base__.html' %} {% load staticfiles %} {% csrf_token %} {% block content %}
 
-{% block content %}
-
-	<form class="form-wrapper" method="POST" action="{% url 'KmetApp:search_basket' %}">
-	    <input type="text" id="search" name="search_term" placeholder="Iskanje oglasov">
-	    <input type="submit" id="submit">
-	</form>
+<form class="form-wrapper" method="POST" action="{% url 'KmetApp:search_basket' %}">
+  <input class="form-control" type="text" id="search" name="search_term" placeholder="Iskanje oglasov">
+  <input type="submit" id="submit">
+</form>
 
 {% for basket in baskets %}
- 		<div class="container">          	
-          	<div class="item col-md-12 col-md-offset-3" >
-               {% if selling.picture %}
-                  <img src="{{selling.picture}}" width="250" height="250"></img>
-              {%else %}
-                  <img src="{% static 'img/Selling/default.jpg' %}" width="250" height="250"></img>
-              {% endif %}
-	            <h3 class="name"> {{ basket.name }} </h3>
-	            <ul>
-	            	<li class="price" name="cena_K">  Cena izdelka: {{ basket.price }} €/košarica</li>
-	           		<li class = "quantity" name="kolicina_K"> Kolicina: {{ basket.quantity }} kg </li>
-                    <li class = "kolicina" > Stevilo košaric: {{ basket.total_Amount }}</li>
-                    <li class = "prodajalec"> Ime prodajalca: {{basket.seller.name}}</li>
-                    <li class ="mesto_pridelave"> Mesto pridelave: {{basket.origin}}</li>
-	           		<li class = "description"> Opis: {{ basket.description }}	</li>           		
-	            </ul>
-               {%if request.user.is_authenticated %}
-              <a class="btn btn-lg btn-info model" href="#" style="
+<div class="container">
+  <div class="item col-md-12 col-md-offset-3">
+    {% if selling.picture %}
+    <img src="{{selling.picture}}" width="250" height="250"></img>
+    {%else %}
+    <img src="{% static 'img/Selling/default.jpg' %}" width="250" height="250"></img>
+    {% endif %}
+    <h3 class="name"> {{ basket.name }} </h3>
+    <ul>
+      <li class="price" name="cena_K"> Cena izdelka: {{ basket.price }} €/košarica</li>
+      <li class="quantity" name="kolicina_K"> Kolicina: {{ basket.quantity }} kg </li>
+      <li class="kolicina"> Stevilo košaric: {{ basket.total_Amount }}</li>
+      <li class="prodajalec"> Ime prodajalca: {{basket.seller.name}}</li>
+      <li class="mesto_pridelave"> Mesto pridelave: {{basket.origin}}</li>
+      <li class="description"> Opis: {{ basket.description }} </li>
+    </ul>
+    {%if request.user.is_authenticated %}
+    <a class="btn btn-lg btn-info model" href="#" style="
                       font-size: 12px;
-                      padding: 5px 2px;" data-toggle="modal" data-target="#myModal"
-              data-id="{{basket.id}}">Oddaja naročila </a>
-              {% endif %}
-              <br></br>    
-            </div>
-        </div>
-  {% endfor %}
+                      padding: 5px 2px;" data-toggle="modal" data-target="#myModal" data-id="{{basket.id}}">Oddaja naročila </a>    {% endif %}
+    <br></br>
+  </div>
+</div>
+{% endfor %}
 <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
   <form action="{% url 'KmetApp:add_orderB' %}" method="POST">
-          {% csrf_token %}
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Oddaja naročila za košarico</h4>
+    {% csrf_token %}
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Oddaja naročila za košarico</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <label class="control-label col-md-5">Število košaric: </label><input type="integer" class="form-control" name="numberBasket"
+                id="stevilo_K"></li>
+            <li class="list-group-item">
+              <label class="control-label col-md-8"> Pogostost dostave košaric:</label> <input type="text" class="form-control"
+                name="frequency" id="pogostost" placeholder="npr. 1x na teden">
+              <input type="hidden" type="text" value="" name="basket" id="basket">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" data-dismiss="modal">
+
+        </div>
       </div>
-      <div class="modal-body">
-      <ul>
-			     <li>Število košaric: <input type="integer" name="numberBasket" id="stevilo_K"></li>
-           <li>Pogostost dostave košaric:  <input type="text" name="frequency" id="pogostost"placeholder="npr. 1x na teden">
-           <input type="hidden" type="text" value="" name="basket" id="basket"> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input  type="submit" class="btn btn-primary" data-dismiss="modal">
-        
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
   </form>
-</div><!-- /.modal -->
-  <script
-    src="https://code.jquery.com/jquery-2.2.4.js"
-    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-    crossorigin="anonymous"></script>
+</div>
+<!-- /.modal -->
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script>
-    $('.model').on('click', function(e) {
-        var basket = $(this).data('id');
-        $(".modal-body #basket").val( basket );
-    });
+  $('.model').on('click', function (e) {
+    var basket = $(this).data('id');
+    $(".modal-body #basket").val(basket);
+  });
+
 </script>
 
 {% endblock %}
