@@ -72,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'KmetSite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -80,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kmet',
-        'USER': 'kmet',
-        'PASSWORD': 'Kmet_123456',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'OPTIONS': {
             'sql_mode': 'traditional',

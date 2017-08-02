@@ -21,6 +21,30 @@
  <div class="col-md-12">
 	<form action="{% url 'KmetApp:register_user' %}" method="POST">
 		{% csrf_token %}
+ 			 <div class="form-group col-md-12 {%if form.errors.email %}has-error{%endif%}">
+ 				<label class="control-label col-md-3">Email</label>
+				<div class="col-md-6">
+ 				<input type="text" name="email" id="inputError" value="{{form.email.value}}" placeholder="Email" rows="3" class="form-control">
+ 				{%if form.errors.email %}
+        				<div class="controls">
+ 						<span class="error-inline">Vnesite email naslov</span>
+ 					</div>
+ 				{%endif%}
+      		 </div>
+			 </div>
+ 					<div class="col-md-12 form-group {%if form.errors.email %}has-error{%endif%}">
+ 						<label class="control-label col-md-3">Geslo</label>
+						 <div class="col-md-6">	
+ 						<input type="password" name="password1" placeholder="Password" class="form-control">
+ 					</div>
+					 </div>
+ 					<div class="col-md-12 form-group">
+ 						<label class="control-label col-md-3">Ponovno vnesite geslo</label>
+						 <div class="col-md-6">
+ 						<input type="password" name="password2" placeholder="Re-enter password" class="form-control">
+						 </div>
+ 					</div>
+ 				
 		<div class="col-md-12 form-group">
 			<label class="control-label col-md-3">Ime</label>
 			<div class="col-md-6">
