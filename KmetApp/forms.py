@@ -1,5 +1,5 @@
 from django import forms
-from KmetApp.models import User, Selling, Basket
+from KmetApp.models import User, Product, Basket
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -19,15 +19,15 @@ class UserForm(UserCreationForm):
         return user
 
 
-class SellingForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
     """Add Selling Form"""
     class Meta:
-        model = Selling
-        exclude = ['is_Active', 'seller']
+        model = Product
+        exclude = ['is_active', 'seller']
 
     def save(self, commit=True):
         """Save Method"""
-        selling = super(SellingForm, self).save(commit=False)
+        selling = super(ProductForm, self).save(commit=False)
 
         if commit:
             selling.save()
@@ -53,7 +53,7 @@ class BasketForm(forms.ModelForm):
     """Add Basket Form"""
     class Meta:
         model = Basket
-        exclude = ['is_Active', 'seller']
+        exclude = ['is_active', 'seller']
 
     def save(self, commit=True):
         """Save Method"""

@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
-from KmetApp.models import User, Selling, Basket, Order_Selling, Order_Basket
+from KmetApp.models import User, Product, Basket, Order_Product, Order_Basket
 import datetime
 from django.shortcuts import redirect
-from KmetApp.forms import UserForm, UserEditForm, SellingForm, BasketForm
+from KmetApp.forms import UserForm, UserEditForm, ProductForm, BasketForm
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -56,9 +56,9 @@ def logoff(request):
 
 def add_selling(request):
     """Add Selling"""
-    form = SellingForm()
+    form = ProductForm()
     if request.method == 'POST':
-        form = SellingForm(request.POST, request.FILES)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             bbb = form.save(commit=False)
             seller = User.objects.get(id=request.user.id)
